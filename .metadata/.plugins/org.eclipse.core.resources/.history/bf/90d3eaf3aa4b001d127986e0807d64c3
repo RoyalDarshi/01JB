@@ -1,0 +1,50 @@
+package bank;
+
+import java.util.Scanner;
+
+public class BankAccount {
+	static final String bankName;
+	static final String branchName;
+	static final String ifsc;
+	static private final long accNO;
+	
+	String accHolName;
+	long accNum;
+	double balance;
+	Address address;
+	
+	static {
+		bankName="HDFC";
+		branchName="Ameerpet";
+		ifsc="HDFC0123456";
+		accNO=856395762947L;
+	}
+	Scanner scn=new Scanner(System.in);
+	public BankAccount() {
+		// TODO Auto-generated constructor stub
+		System.out.print("Enter Your Name: ");
+		accHolName=scn.nextLine();
+		System.out.print("Enter Amount: ");
+		balance=scn.nextDouble();
+		accNum=generateAccNo();
+		setAddress();
+	}
+	
+	void setAddress() {
+		address=new Address();
+		System.out.print("Enter Your House Number: ");
+		address.houseNO=scn.nextInt();
+		System.out.print("Enter Your Area: ");
+		address.area=scn.next();
+		System.out.print("Enter Your Pin No: " );
+		address.pinNo=scn.nextInt();
+		System.out.print("Enter Your City: ");
+		address.city=scn.next();
+	}
+	
+	private long generateAccNo() {
+		return accNO+1;
+	}
+	
+	
+}

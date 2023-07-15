@@ -1,0 +1,7 @@
+package com.nit.assisnment;
+
+public class Building {
+	String ownerName;
+	String sizeOfTheBuilding;
+	String address;
+}

@@ -1,0 +1,23 @@
+package com.royal.java;
+
+public class SortedString {
+	
+	public static String sort(String word) {
+		char[] arr=word.toCharArray();
+		for(int i=0;i<arr.length-1;i++) {
+			for (int j = 1; j < arr.length; j++) {
+				if(arr[i]>arr[j]) {
+					char temp=(char)arr[j];
+					arr[j]=(char)arr[i];
+					arr[i]=(char)temp;
+				}
+			}
+		}
+		return arr.toString();
+	}
+
+	public static void main(String[] args) {		
+		System.out.println(sort("nareshit"));
+	}
+
+}

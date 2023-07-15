@@ -1,0 +1,108 @@
+package bank;
+
+public class BankAccount {
+
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+
+	private static final String bankName;
+	private static final String branchName;
+	private static final String ifsc;
+	private static final long accNO;
+
+	private String accHolName;
+	private final long accNum;
+	private double balance;
+	Address address;
+
+	static {
+		bankName = "HDFC";
+		branchName = "Ameerpet";
+		ifsc = "HDFC0123456";
+		accNO = 856395762947L;
+	}
+
+	public BankAccount() {
+		this.accNum = 0;
+		// TODO Auto-generated constructor stub
+		generateAccNo();
+	}
+
+	public String getAccHolName() {
+		return accHolName;
+	}
+
+	public void setAccHolName(String accHolName) {
+		this.accHolName = accHolName;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public static String getBankname() {
+		return bankName;
+	}
+
+	public static String getBranchname() {
+		return branchName;
+	}
+
+	public static String getIfsc() {
+		return ifsc;
+	}
+
+	public static long getAccno() {
+		return accNO;
+	}
+
+	public long getAccNum() {
+		return accNum;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	void setAddress() {
+		address = new Address();
+	}
+
+	private long generateAccNo() {
+		return accNO + 1;
+	}
+
+	public void deposite(double amount) throws IllegalArgumentException {
+		if (amount <= 0) {
+			throw new IllegalArgumentException("Amount must be greater than 0");
+		}
+		balance = balance + amount;
+		alert(amount, "credited");
+	}
+
+	public double withdraw(double amount) throws IllegalArgumentException, IllegalStateException {
+		if (amount <= 0) {
+			throw new IllegalArgumentException("Amount must be greater than 0");
+		}
+		if (amount > balance) {
+			throw new IllegalStateException("Insufficient Balance!");
+		}
+		alert(amount, "debited");
+		return balance - amount;
+	}
+
+	public void alert(double cash, String action) {
+		System.out.println(cash + "is " + action + " from your account " + accNO);
+	}
+
+	public void display() {
+		System.out.println("Bank Name\t\t: " + bankName);
+		System.out.println("Branch Name\t\t: " + branchName);
+		System.out.println("IFSC\t\t: " + ifsc);
+		System.out.println("Account Holder Name\t: " + accHolName);
+		System.out.println("Account Number\t\t: " + accNum);
+		System.out.println("Balance\t\t: " + balance);
+		System.out.println("Address\t\t: " + address);
+	}
+}

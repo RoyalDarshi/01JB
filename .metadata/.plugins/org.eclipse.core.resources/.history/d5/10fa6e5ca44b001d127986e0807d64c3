@@ -1,0 +1,11 @@
+package bank;
+public class BankAccount {
+	static final String bankName;
+	static final String branchName;
+	static final String ifsc;
+	
+	String accHolName;
+	long accNum;
+	double balance;
+	Address address;
+}

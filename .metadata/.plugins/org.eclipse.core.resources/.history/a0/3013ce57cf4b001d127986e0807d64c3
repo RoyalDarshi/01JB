@@ -1,0 +1,124 @@
+package bank;
+
+import java.util.Scanner;
+
+public class BankAccount {
+
+	static final String bankName;
+	static final String branchName;
+	static final String ifsc;
+	static private final long accNO;
+
+	String accHolName;
+	private final long accNum;
+	private double balance;
+	Address address;
+
+	static {
+		bankName = "HDFC";
+		branchName = "Ameerpet";
+		ifsc = "HDFC0123456";
+		accNO = 856395762947L;
+	}
+	
+	Scanner scn = new Scanner(System.in);
+
+	public String getAccHolName() {
+		return accHolName;
+	}
+
+	public void setAccHolName(String accHolName) {
+		this.accHolName = accHolName;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	public static String getBankname() {
+		return bankName;
+	}
+
+	public static String getBranchname() {
+		return branchName;
+	}
+
+	public static String getIfsc() {
+		return ifsc;
+	}
+
+	public static long getAccno() {
+		return accNO;
+	}
+
+	public long getAccNum() {
+		return accNum;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public BankAccount() {
+		// TODO Auto-generated constructor stub
+		System.out.print("Enter Your Name: ");
+		accHolName = scn.nextLine();
+		System.out.print("Enter Amount: ");
+		balance = scn.nextDouble();
+		accNum = generateAccNo();
+		setAddress();
+	}
+
+	void setAddress() {
+		address = new Address();
+		System.out.print("Enter Your House Number: ");
+		address.houseNO = scn.nextInt();
+		System.out.print("Enter Your Area: ");
+		address.area = scn.nextLine();
+		System.out.print("Enter Your Pin No: ");
+		address.pinNo = scn.nextInt();
+		System.out.print("Enter Your City: ");
+		address.city = scn.nextLine();
+	}
+
+	private long generateAccNo() {
+		return accNO + 1;
+	}
+
+	public void deposite(double amount) throws IllegalArgumentException {
+		if (amount <= 0) {
+			throw new IllegalArgumentException("Amount must be greater than 0");
+		}
+		balance = balance + amount;
+		alert(amount, "credited");
+	}
+
+	public double withdraw(double amount) throws IllegalArgumentException, IllegalStateException {
+		if (amount <= 0) {
+			throw new IllegalArgumentException("Amount must be greater than 0");
+		}
+		if (amount > balance) {
+			throw new IllegalStateException("Insufficient Balance!");
+		}
+		alert(amount, "debited");
+		return balance - amount;
+	}
+
+	public void alert(double cash, String action) {
+		System.out.println(cash + "is " + action + " from your account " + accNO);
+	}
+
+	public void display() {
+		System.out.println("Bank Name\t\t: " + bankName);
+		System.out.println("Branch Name\t\t: " + branchName);
+		System.out.println("IFSC\t\t: " + ifsc);
+		System.out.println("Account Holder Name\t: " + accHolName);
+		System.out.println("Account Number\t: " + accNum);
+		System.out.println("Balance\t\t: " + balance);
+		System.out.println("Address\t\t: " + address);
+	}
+}

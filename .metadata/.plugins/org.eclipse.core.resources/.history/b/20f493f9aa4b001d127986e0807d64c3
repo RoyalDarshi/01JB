@@ -1,0 +1,15 @@
+package bank;
+public class Address {
+	int houseNO;
+	int pinNo;
+	String area;
+	String city;
+	
+	public void setArea(String area) {
+		this.area = area;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	
+}

@@ -1,0 +1,22 @@
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		NITLinkedList nit=new NITLinkedList();
+		System.out.println(nit);
+		System.out.println(nit.add("Roy"));
+		System.out.println(nit);
+		System.out.println(nit.add("Kolu"));
+		nit.add("Lalit");
+		nit.add("Sandy");
+		System.out.println(nit);
+		System.out.println(nit.size());
+		nit.add("dbms");
+		nit.add(null);
+		System.out.println(nit);
+		System.out.println(nit.indexOf("Lalit"));
+		System.out.println(nit.remove("Roy"));
+		System.out.println(nit);
+	}
+
+}

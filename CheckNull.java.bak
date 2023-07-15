@@ -1,0 +1,11 @@
+class CheckNull 
+{
+	static void display(){
+		System.out.println("Hello World!");
+	}
+	public static void main(String[] args) 
+	{
+		CheckNull checkNull=null;
+		new CheckNull().display();
+	}
+}

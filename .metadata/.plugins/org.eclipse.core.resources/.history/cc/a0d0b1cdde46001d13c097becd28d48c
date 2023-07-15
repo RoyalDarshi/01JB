@@ -1,0 +1,29 @@
+import javax.annotation.processing.SupportedSourceVersion;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		NITLinkedList nit=new NITLinkedList();
+		System.out.println(nit);
+		System.out.println(nit.add("Roy"));
+		System.out.println(nit);
+		System.out.println(nit.add("Kolu"));
+		nit.add("Lalit");
+		nit.add("Sandy");
+		System.out.println(nit);
+		System.out.println(nit.size());
+		nit.add("dbms");
+		nit.add(null);
+		System.out.println(nit);
+		System.out.println(nit.indexOf("dbms"));
+		System.out.println(nit.remove("dbms"));
+		System.out.println(nit);
+		System.out.println(nit.remove(null));
+		System.out.println(nit);
+		System.out.println(nit.size());
+		System.out.println(nit.remove("Sandy"));
+		System.out.println(nit);
+	}
+
+}

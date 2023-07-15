@@ -1,0 +1,5 @@
+ select * from emp
+ where sal>2500
+
+select * from emp
+where sal>2500;

@@ -1,0 +1,8 @@
+class Wrapper1{
+	public static void main(String[] args){
+		Integer intgr=new Integer[67];
+		System.out.println(intgr.hashCode()+" <=== "+intgr);
+		intgr=89;
+		System.out.println(intgr.hashCode()+" <=== "+intgr);
+	}
+}

@@ -1,0 +1,13 @@
+package com.nit.assisnment;
+
+public class Contractor {
+	String contractName;
+	String phoneNumber;
+	String Address;
+	String ownerName;
+	Building building;
+	Create a class “Building” having following ways
+	String ownerName;
+	String sizeOfTheBuilding; (e.g 100*200 sq ft)
+	String address
+}

@@ -1,0 +1,51 @@
+public class NITLinkedList {
+	private Node first;
+	private Node last;
+	private int size;
+	
+	public boolean add(Object obj) {
+		if(first==null) {
+			Node node=new Node(null, obj, null);
+			first=node;
+			last=node;
+			size++;
+			return true;
+		}
+		else {
+			Node node=new Node(last, obj, null);
+			last=node;
+			size++;
+			return true;
+		}
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		StringBuilder builder=new StringBuilder();
+		builder.append("[");
+		for (Node node = first; node !=null; node=node.next) {
+			builder.append(node.item);
+			builder.append(", ");
+		}
+		int start=builder.lastIndexOf(", ");
+		if(start!=-1) {
+			builder.delete(start, start+2);
+		}
+		builder.append("]");
+		return builder.toString();
+	}
+	
+	public class Node{
+		private Node prev;
+		private Node next;
+		private Object item;
+		public Node(Node prev,Object item, Node next) {
+			// TODO Auto-generated constructor stub
+			this.prev=prev;
+			this.item=item;
+			this.next=next;
+		}
+	}
+
+}

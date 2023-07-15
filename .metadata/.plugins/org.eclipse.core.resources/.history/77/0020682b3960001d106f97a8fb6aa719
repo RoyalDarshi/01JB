@@ -1,0 +1,13 @@
+package com.nit.assisnment;
+
+public class AssociationTest {
+	public static void main(String[] args) {
+		Contractor contract=new Contractor();
+		System.out.println("****************Contract Details****************");
+		System.out.println("Contract Name:\t\t\t"+contract.getContractName());		
+		System.out.println("Contractor Phone Number:\t"+contract.getPhoneNumber());		
+		System.out.println("Contractor Address:\t\t"+contract.getAddress());		
+		System.out.println("Contract Owner Name:\t\t"+contract.getOwnerName());
+		contract.getBuilding();
+	}
+}

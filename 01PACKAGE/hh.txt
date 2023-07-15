@@ -1,0 +1,6 @@
+ select e.empno,e.ename,e.sal,d.dname,d.loc from emp e,dept d
+ from emp e,dept d
+ where e.deptno=d.deptno(+) union
+ select e.empno,e.ename,e.sal,d.dname,d.loc from emp e,dept d
+ from emp e,dept d
+ where e.deptno(+)=d.deptno

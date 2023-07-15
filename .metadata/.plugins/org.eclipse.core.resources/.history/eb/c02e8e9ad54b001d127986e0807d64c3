@@ -1,0 +1,17 @@
+package bank;
+
+public class Customer {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		BankAccount acc1=new BankAccount();
+		acc1.setAccHolName("Priyadarshi Roy");
+		acc1.setBalance(2500);
+		acc1.setAddress();
+		acc1.address.setHouseNO(15);
+		acc1.address.setArea("Shiva Bagh");
+		acc1.address.setCity("Hydrabad");
+		acc1.address.setPinNo(210012);
+	}
+
+}

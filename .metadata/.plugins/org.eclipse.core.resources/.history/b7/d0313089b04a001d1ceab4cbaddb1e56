@@ -1,0 +1,16 @@
+public class Rectangle extends Shape{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Shape rect=new Shape();
+		double area=
+	}
+
+	@Override
+	public double area(double length, double breadth) {
+		// TODO Auto-generated method stub
+		double area=length*breadth;
+		return area;
+	}
+
+}

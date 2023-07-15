@@ -1,0 +1,7 @@
+package bank;
+public class Address {
+	int hNO;
+	int pinNo;
+	String area;
+	String city;
+}

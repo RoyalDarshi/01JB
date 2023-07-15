@@ -1,0 +1,24 @@
+import java.util.Scanner;
+class Assignment001 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Enter marks:");
+		Scanner sc=new Scanner(System.in);
+		int no=sc.nextInt();
+		String ch="";
+		if(no<=30&&no>25)
+			ch="A";
+		else if(no<=25&&no>20)
+			ch="B";
+		else if(no<=20&&no>15)
+			ch="C";
+		else if(no<=15&&no>10)
+			ch="D";
+		else if(no<=10&&no>5)
+			ch="E";
+		else if(no<=5&&no>=0)
+			ch="F";
+		System.out.println(ch);
+	}
+}

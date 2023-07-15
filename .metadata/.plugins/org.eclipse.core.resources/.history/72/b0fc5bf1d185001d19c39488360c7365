@@ -1,0 +1,9 @@
+package pattern.design;
+
+import java.util.Scanner;
+
+public class Pattern6 {
+	Scanner sc=new Scanner(System.in);
+	System.out.print("Enter row no: ");
+	
+}

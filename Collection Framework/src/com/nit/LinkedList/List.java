@@ -1,0 +1,275 @@
+package com.nit.LinkedList;
+
+public class List {
+	private Node first = null;
+	private Node last = null;
+	private int size = 0;
+
+	public int size() {
+		return size;
+	}
+
+	public boolean add(Object obj) {
+		Node node = new Node();
+		if (first == null) {
+			first = node;
+			node.previous = null;
+		} else {
+			node.previous = last;
+			node.previous.next = node;
+		}
+		node.item = obj;
+		node.next = null;
+		last = node;
+		size++;
+		return true;
+	}
+
+	public boolean add(int index, Object obj) {
+		if (index > size || index < 0)
+			throw new ArrayIndexOutOfBoundsException("Index: " + index + ", Size: " + size());
+		Node node = new Node();
+		if (first == null) {
+			first = node;
+			last = node;
+			node.item = obj;
+			node.previous = null;
+			node.next = null;
+			size++;
+			return true;
+		}
+		if (index == 0) {
+			node.next = first;
+			first.previous = node;
+			first = node;
+			node.item = obj;
+			node.previous = null;
+			size++;
+			return true;
+		}
+		if (index == size()) {
+			node.previous = last;
+			last.next = node;
+			last = node;
+			node.next = null;
+			node.item = obj;
+			size++;
+			return true;
+		} else {
+			Node clone = first;
+			for (int i = 0; i < index; i++) {
+				clone = clone.next;
+			}
+			node.previous = clone.previous;
+			node.next = clone;
+			clone.previous.next = node;
+			clone.previous = node;
+			node.item = obj;
+			size++;
+			return true;
+		}
+	}
+
+	public Object remove(int index) {
+		if (index < 0 || index >= size())
+			throw new ArrayIndexOutOfBoundsException("Index: " + index + ", Size: " + size());
+		Node node = first;
+		Object clone = null;
+		if (first == last) {
+			first = null;
+			last = null;
+			clone = node.item;
+			node.item = null;
+			size--;
+			return clone;
+		}
+		if (index == 0) {
+			first.next.previous = null;
+			clone = first.item;
+			first = first.next;
+			size--;
+			return clone;
+		}
+		if (index == size() - 1) {
+			last.previous.next = null;
+			clone = last.item;
+			last.item = null;
+			last = last.previous;
+			size--;
+			return clone;
+		} else {
+			for (int i = 0; i < index; i++) {
+				node = node.next;
+			}
+			node.previous.next = node.next;
+			node.next.previous = node.previous;
+			clone = node.item;
+			node.item = null;
+			node.next = null;
+			node.previous = null;
+			size--;
+			return clone;
+		}
+	}
+
+	public boolean remove(Object obj) {
+		Node node = first;
+		if (obj == null) {
+			if (node.item == null) {
+				if (node.next == null) {
+					first = null;
+					last = null;
+					size--;
+					return true;
+				}
+				node.next.previous = null;
+				first = node.next;
+				node.next = null;
+				size--;
+				return true;
+			}
+			if (last.item == null) {
+				node = last;
+				last.previous.next = null;
+				last = node.previous;
+				node.previous = null;
+				size--;
+				return true;
+			} else {
+				for (;;) {
+					if (node.next != null)
+						node = node.next;
+					if (node.item == null) {
+						node.previous.next = node.next;
+						node.next.previous = node.previous;
+						node.next = null;
+						node.previous = null;
+						size--;
+						return true;
+					}
+					if (node.next == null)
+						break;
+				}
+				return false;
+			}
+		} // if_null
+		else {
+			if (obj.equals(node.item)) {
+				if (node.next == null) {
+					first = null;
+					last = null;
+					size--;
+					return true;
+				}
+				node.next.previous = null;
+				first = node.next;
+				node.next = null;
+				size--;
+				return true;
+			}
+			if (obj.equals(last.item)) {
+				node = last;
+				last.previous.next = null;
+				last = node.previous;
+				node.previous = null;
+				size--;
+				return true;
+			} else {
+				for (;;) {
+					if (node.next != null)
+						node = node.next;
+					if (obj.equals(node.item)) {
+						node.previous.next = node.next;
+						node.next.previous = node.previous;
+						node.next = null;
+						node.previous = null;
+						size--;
+						return true;
+					}
+					if (node.next == null)
+						break;
+				}
+				return false;
+			}
+		}
+	}
+
+	public int indexOf(Object obj) {
+		Node node = first;
+		if (obj == null) {
+			for (int i = 0; i < size(); i++) {
+				if (node.item == null)
+					return i;
+				else {
+					node = node.next;
+				}
+			}
+			return -1;
+		} else {
+			for (int i = 0; i < size(); i++) {
+				if (obj.equals(node.item))
+					return i;
+				else {
+					node = node.next;
+				}
+			}
+			return -1;
+		}
+	}
+
+	public boolean contains(Object obj) {
+		Node node = first;
+		if (obj == null) {
+			for (;;) {
+				if (node.item == null)
+					return true;
+				if (node.next != null)
+					node = node.next;
+				else
+					return false;
+			}
+		} else {
+			for (;;) {
+				if (obj.equals(node.item))
+					return true;
+				if (node.next != null)
+					node = node.next;
+				else
+					return false;
+			}
+		}
+	}
+
+	@Override
+	public String toString() {
+		if (first == null)
+			return "[]";
+		StringBuilder sb = new StringBuilder();
+		sb.append("[");
+		Node node = first;
+		for (;;) {
+			sb.append(node.item);
+			if (node != last) {
+				sb.append(", ");
+				node = node.next;
+			} else {
+				sb.append("]");
+				return sb.toString();
+			}
+
+		}
+//		Node node=first;
+//		for(;;) {
+//			sb.append(node.previous+"<<< "+node.item+" >>>"+node.next+"\n");
+//			if(node!=last) {
+//				node=node.next;
+//			}
+//			else {
+//				sb.append("first: "+first+"\n");
+//				sb.append("last: "+last);
+//				return sb.toString();
+//			}
+//		}
+	}
+
+}

@@ -1,0 +1,3 @@
+public abstract class Shape {
+	public static abstract double area(double x,double y);
+}

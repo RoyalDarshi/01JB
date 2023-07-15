@@ -1,0 +1,38 @@
+package bank;
+
+public class Address {
+	int houseNO;
+	int pinNo;
+	String area;
+	String city;
+
+	public String getArea() {
+		return area;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public int getHouseNO() {
+		return houseNO;
+	}
+
+	public int getPinNo() {
+		return pinNo;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		StringBuilder addr = new StringBuilder();
+		addr.append(area);
+		addr.append(", ");
+		addr.append(houseNO);
+		addr.append(", ");
+		addr.append(city);
+		addr.append(", ");
+		addr.append(pinNo);
+		return addr.toString();
+	}
+}

@@ -1,0 +1,22 @@
+package bank;
+public class BankAccount {
+	static final String bankName;
+	static final String branchName;
+	static final String ifsc;
+	static private final long accNO;
+	
+	String accHolName;
+	long accNum;
+	double balance;
+	Address address;
+	
+	static {
+		bankName="HDFC";
+		branchName="Ameerpet";
+		ifsc="HDFC0123456";
+	}
+	
+	private long generateAccNo() {
+		return accNO+1;
+	}
+}

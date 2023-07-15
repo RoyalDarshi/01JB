@@ -1,0 +1,19 @@
+class OuterClassMemb 
+{
+	static int x=10;
+	static class InnerClass {
+		static int y=20;
+		static void m1(){
+			System.out.println();
+			System.out.println("Y: "+y);
+			System.out.println("X: "+x);
+		}
+	}
+	public static void main(String[] args) 
+	{
+		System.out.println("X: "+x);
+		//System.out.println("Y: "+y);
+		//m1();
+		InnerClass.m1();
+	}
+}

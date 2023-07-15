@@ -1,0 +1,9 @@
+package com.nit.assisnment;
+
+public class Contractor {
+	String contractName;
+	String phoneNumber;
+	String Address;
+	String ownerName;
+	Building building;
+}

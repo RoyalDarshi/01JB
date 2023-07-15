@@ -1,0 +1,53 @@
+package com.nit;
+
+public class Program1 {
+	
+	public static boolean isContainZero(int no) {
+		StringBuilder str=new StringBuilder(no);
+		for(int i=0;i<str.length();i++) {
+			if(str.charAt(i)==48)
+				return true;
+		}
+		return false;
+	}
+	
+	public static int findFirstPlace(int no) {
+		int temp=1;
+		while(no>=10) {
+			temp*=10;
+			no/=10;
+		}
+		return temp;
+	}
+
+	public static boolean isLeftTruncatablePrime(int no) {
+		while (true) {
+			if (isPrime(no)) {
+				if(no<10)
+					return true;
+				int place=findFirstPlace(no);
+				
+				
+			} else {
+				return false;
+			}
+		}
+	}
+
+	public static boolean isPrime(int no) {
+		for (int i = 2; i <= no / 2; i++) {
+			if (no % i == 0)
+				return false;
+		}
+		return true;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//System.out.println(isPrime(11));
+		//System.out.println(isLeftTruncatablePrime(17));
+		//System.out.println(findFirstPlace(1090));
+		System.out.println(isContainZero(901));
+	}
+
+}

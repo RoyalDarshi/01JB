@@ -62,7 +62,7 @@ public class TableCollection {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
+
 		StringBuilder builder = new StringBuilder();
 		builder.append("{");
 		for (int i = 0; i < elementCount; i++) {

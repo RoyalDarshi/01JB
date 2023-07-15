@@ -1,5 +1,4 @@
 package com.array.matrix;
-import java.lang.*;
 import java.util.*;
 
 public class MagicSquare {

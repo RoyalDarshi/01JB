@@ -10,28 +10,27 @@ public class Contractor {
 	private Building building;
 	
 	{
-		Scanner scn=new Scanner(System.in);
-		System.out.print("Enter Contract Name: ");
-		setContractName(scn.nextLine());
-		System.out.print("Enter Contractor Phone Number: ");
-		setPhoneNumber(scn.nextLine());
-		System.out.print("Enter Contractor Address: ");
-		setAddress(scn.nextLine());
-		System.out.print("Enter Contract Owner Name: ");
-		setOwnerName(scn.nextLine());
-		building=new Building();
-		System.out.print("Enter Building Address: ");
-		building.setAddress(scn.nextLine());
-		System.out.print("Enter Building Owner Name: ");
-		building.setOwnerName(scn.nextLine());
-		System.out.print("Enter Size of Building: ");
-		building.setSizeOfTheBuilding(scn.nextLine());
+		try (Scanner scn = new Scanner(System.in)) {
+			System.out.print("Enter Contract Name: ");
+			setContractName(scn.nextLine());
+			System.out.print("Enter Contractor Phone Number: ");
+			setPhoneNumber(scn.nextLine());
+			System.out.print("Enter Contractor Address: ");
+			setAddress(scn.nextLine());
+			System.out.print("Enter Contract Owner Name: ");
+			setOwnerName(scn.nextLine());
+			building=new Building();
+			System.out.print("Enter Building Address: ");
+			building.setAddress(scn.nextLine());
+			System.out.print("Enter Building Owner Name: ");
+			building.setOwnerName(scn.nextLine());
+			System.out.print("Enter Size of Building: ");
+			building.setSizeOfTheBuilding(scn.nextLine());
+		}
 	}
 	
 	public Contractor() {
-		// TODO Auto-generated constructor stub
-		
-		
+		super();
 	}
 	
 	public String getContractName() {

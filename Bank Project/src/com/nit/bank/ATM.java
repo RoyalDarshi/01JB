@@ -11,7 +11,6 @@ public class ATM {
 	}
 
 	public static void main(String[] args) throws Exception{
-		// TODO Auto-generated method stub
 		Scanner scn=new Scanner(System.in);
 		System.out.print("Plese Enter Bank Name: ");
 		String bankName=scn.next();

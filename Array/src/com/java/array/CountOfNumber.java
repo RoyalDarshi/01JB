@@ -25,7 +25,6 @@ public class CountOfNumber {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		countNum(new int[]{3,3,1,1,5,6,2,2,3,1});
 	}
 

@@ -1,10 +1,10 @@
-public  class A implements I {
+public class A implements I {
 	public static void main(String[] args) {
-		I i=new I() {
-			
+		I i = new I() {
+
 			@Override
 			public void m1() {
-				// TODO Auto-generated method stub
+
 				System.out.println("Hello...");
 			}
 		};
@@ -13,7 +13,6 @@ public  class A implements I {
 
 	@Override
 	public void m1() {
-		// TODO Auto-generated method stub
-		
+
 	}
 }

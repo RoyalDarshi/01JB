@@ -46,7 +46,7 @@ public class Program1 {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		 
 		//System.out.println(isPrime(11));
 		System.out.println(isLeftTruncatablePrime(17));
 		//System.out.println(findFirstPlace(1090));

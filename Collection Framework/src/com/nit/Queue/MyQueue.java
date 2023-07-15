@@ -3,8 +3,8 @@ package com.nit.Queue;
 public class MyQueue {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Queue q=new Queue();
+
+		Queue q = new Queue();
 		q.enQueue(12);
 		q.enQueue(13);
 		q.deQueue();
@@ -22,7 +22,7 @@ public class MyQueue {
 		q.enQueue(12);
 		q.deQueue();
 		q.deQueue();
-		System.out.println(q.getFirstElement());		
+		System.out.println(q.getFirstElement());
 		q.show();
 	}
 

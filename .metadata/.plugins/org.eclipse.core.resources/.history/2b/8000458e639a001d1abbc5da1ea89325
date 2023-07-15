@@ -40,7 +40,7 @@ public class MagicSquare {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		 
 		int[][] matrix=new int[4][3];
 		System.out.println(matrix.length);
 		Scanner sc=new Scanner(System.in);

@@ -242,7 +242,7 @@ public class List {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
+		 
 		if (first == null)
 			return "[]";
 		StringBuilder sb = new StringBuilder();

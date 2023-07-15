@@ -15,15 +15,15 @@ public class LettersCount {
 			if (count != 0)
 				System.out.println("No of " + (char) j + " : " + count);
 		}
-		System.out.println("Total letter count: "+name.length());
+		System.out.println("Total letter count: " + name.length());
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner scn=new Scanner(System.in);
-		System.out.print("Enter any name: ");
-		String name=scn.next();
-		letterCount(name);
+		try (Scanner scn = new Scanner(System.in)) {
+			System.out.print("Enter any name: ");
+			String name = scn.next();
+			letterCount(name);
+		}
 	}
 
 }

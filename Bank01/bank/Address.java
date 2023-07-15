@@ -41,7 +41,7 @@ public class Address {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
+
 		StringBuilder addr = new StringBuilder();
 		addr.append(houseNO);
 		addr.append(", ");

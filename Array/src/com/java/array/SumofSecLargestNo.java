@@ -56,7 +56,6 @@ public class SumofSecLargestNo {
 	}//sumOfNo()
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		System.out.println(sumOfNo(new int[] {3,2,1,7,5,4}));
 	}
 

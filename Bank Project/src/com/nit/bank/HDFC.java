@@ -9,14 +9,12 @@ public class HDFC implements BankAccount {
 	}
 	@Override
 	public void checkBalance() {
-		// TODO Auto-generated method stub
 		welcome();
 		System.out.println("Your current balance is: "+balance+"\n");
 	}
 
 	@Override
 	public void deposite(double amount) {
-		// TODO Auto-generated method stub
 		welcome();
 		if(amount<=0) {
 			System.err.println("Invalid amount!");
@@ -31,7 +29,6 @@ public class HDFC implements BankAccount {
 	@Override
 	public void withdraw(double amount) {
 		welcome();
-		// TODO Auto-generated method stub
 		if(amount<=0) {
 			System.err.println("Invalid amount!");
 			System.err.println("Please enter amount greater than zero");

@@ -10,7 +10,7 @@ class MyThread implements Runnable {
 public class Test02 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		System.out.println("Main start");
 		MyThread1 my = new MyThread1();
 		Thread th = new Thread(my);

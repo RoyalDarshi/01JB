@@ -5,8 +5,8 @@ import java.util.Vector;
 public class TestVector {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Vector<Object> vc=new Vector<>();
+
+		Vector<Object> vc = new Vector<>();
 		vc.add(5);
 		vc.add(0, "hari");
 		vc.remove("ccg");

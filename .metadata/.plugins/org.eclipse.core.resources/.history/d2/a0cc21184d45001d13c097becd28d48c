@@ -25,7 +25,7 @@ public class NITLinkedList {
 	}
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
+		 
 		StringBuilder builder=new StringBuilder();
 		builder.append("[");
 		for (Node node = first; node !=null; node=node.next) {

@@ -1,12 +1,12 @@
 public class Rectangle implements Shape{
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		 
 		Shape rect=new Shape() {
 			
 			@Override
 			public double area(double length, double breadth) {
-				// TODO Auto-generated method stub
+				 
 				double area=length*breadth;
 				return area;
 			}

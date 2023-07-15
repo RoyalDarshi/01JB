@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class UniqueArray {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int a=0;
 		Scanner sc=new Scanner(System.in);
 		System.out.print("Enter size of array: ");

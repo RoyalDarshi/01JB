@@ -5,8 +5,8 @@ import java.util.LinkedList;
 public class TestLinkedList {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		LinkedList<Object> ls=new LinkedList<>();
+
+		LinkedList<Object> ls = new LinkedList<>();
 		System.out.println(ls.size());
 		ls.add("Hari");
 		ls.add(null);

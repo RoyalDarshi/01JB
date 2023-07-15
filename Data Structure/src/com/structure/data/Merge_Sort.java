@@ -1,4 +1,4 @@
-package com.structure;
+package com.structure.data;
 
 import java.util.Arrays;
 

@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Merge_Sort",
             "request": "launch",
+            "mainClass": "com.structure.data.Merge_Sort",
+            "projectName": "Data Structure"
+        },
+        {
+            "type": "java",
+            "name": "Merge_Sort",
+            "request": "launch",
             "mainClass": "com.structure.Merge_Sort",
             "projectName": "Data Structure"
         },
